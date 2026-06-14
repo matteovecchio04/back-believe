@@ -3,8 +3,8 @@ const cors = require("cors");
 require("dotenv").config();
 
 const userRoutes = require("./routes/userRoutes");
-
 const dbRoutes = require("./routes/dbRoutes");
+const videoRoutes = require("./routes/videoRoutes");
 
 const app = express();
 
@@ -14,6 +14,7 @@ app.use(express.json());
 // ROUTES
 app.use("/api/users", userRoutes);
 app.use("/api", dbRoutes);
+app.use("/api", videoRoutes);
 
 app.get("/", (req, res) => {
     res.send("Server attivo");
